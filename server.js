@@ -6,6 +6,8 @@ const port = 3000
 const pokemon = require('./models/pokemon')
 
 // Middleware
+app.set('view engine', 'jsx')
+app.engine('jsx', require('jsx-view-engine').createEngine())
 
 // Routes...
 
@@ -16,7 +18,7 @@ app.get('/', (req, res)=>{
 // Index : Show all the things! - GET /fruits
 
 app.get('/pokemon', (req, res)=>{
-    res.send(pokemon)
+    res.render('Index', {pokemon: pokemon})
 })
 
 // New : An empty form for a new thing - GET /fruits/new
