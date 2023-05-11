@@ -19,6 +19,9 @@ class Index extends React.Component {
             );
           })}
         </ul>
+        <nav>
+            <a href="http://localhost:3000">Back</a>
+        </nav>
     </div>
     )
   }

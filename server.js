@@ -12,7 +12,7 @@ app.engine('jsx', require('jsx-view-engine').createEngine())
 // Routes...
 
 app.get('/', (req, res)=>{
-    res.send('Welcome to the Pokemon App!')
+    res.send('Welcome to the Pokemon App!<br/><br/><a href="http://localhost:3000/pokemon">See All...</a>')
 })
 
 // Index : Show all the things! - GET /fruits
@@ -29,7 +29,7 @@ app.get('/pokemon', (req, res)=>{
 // Show : Show me this one thing! - GET /fruits/:id (edited)
 
 app.get('/pokemon/:id', (req, res)=>{
-    res.send(req.params.id)
+    res.render('Show', {pokemon: pokemon[req.params.id]})
 })
 
 app.listen(port, ()=>{
