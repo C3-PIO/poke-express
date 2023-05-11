@@ -28,6 +28,10 @@ app.get('/pokemon', (req, res)=>{
 // Edit : A prefilled form to update a specific thing - GET /fruits/:id/edit
 // Show : Show me this one thing! - GET /fruits/:id (edited)
 
+app.get('/pokemon/:id', (req, res)=>{
+    res.send(req.params.id)
+})
+
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`)
 })
