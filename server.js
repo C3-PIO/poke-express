@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 
 // Data
+const pokemon = require('./models/pokemon')
 
 // Middleware
 
@@ -13,6 +14,11 @@ app.get('/', (req, res)=>{
 })
 
 // Index : Show all the things! - GET /fruits
+
+app.get('/pokemon', (req, res)=>{
+    res.send(pokemon)
+})
+
 // New : An empty form for a new thing - GET /fruits/new
 // Delete : Get rid of this particular thing! - DELETE /fruits/:id
 // Update : Update this specific thing with this updated form - PUT /fruits/:id
